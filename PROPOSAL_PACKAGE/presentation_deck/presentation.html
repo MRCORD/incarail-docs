@@ -124,6 +124,13 @@
             font-weight: 700;
         }
 
+        /* Override strong color in dark backgrounds */
+        .callout strong,
+        tr[style*="background: var(--dark-green)"] strong,
+        td[style*="background: var(--dark-green)"] strong {
+            color: var(--orange-secondary);
+        }
+
         em {
             color: var(--orange-primary);
         }
