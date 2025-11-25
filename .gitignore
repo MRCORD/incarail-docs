@@ -8,6 +8,9 @@
 # Include this gitignore file itself
 !.gitignore
 
+# Include root index.html for GitHub Pages
+!index.html
+
 # Exclude common development files
 .DS_Store
 *.log
