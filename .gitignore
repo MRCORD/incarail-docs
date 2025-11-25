@@ -1,0 +1,20 @@
+# Exclude everything by default
+/*
+
+# But include PROPOSAL_PACKAGE
+!PROPOSAL_PACKAGE/
+!PROPOSAL_PACKAGE/**
+
+# Include this gitignore file itself
+!.gitignore
+
+# Exclude common development files
+.DS_Store
+*.log
+*.tmp
+*~
+.env
+.env.local
+
+# Exclude node_modules if any
+node_modules/

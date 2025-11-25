@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncaRail: The $180M Revenue Extraction Opportunity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #003C31;
+            --orange-primary: #FF4400;
+            --orange-secondary: #FA8200;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Slide */
+        .slide {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--dark-green);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-green);
+        }
+
+        .slide-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--orange-primary);
+            background: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--orange-primary);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--dark-green);
+            font-weight: 700;
+        }
+
+        em {
+            color: var(--orange-primary);
+        }
+
+        /* Special Elements */
+        .title-slide {
+            text-align: center;
+            padding: 4rem 3rem;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            color: var(--orange-primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .note-box {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-left: 4px solid var(--orange-primary);
+            margin: 2rem 0;
+            font-style: italic;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-card.highlight {
+            background: var(--dark-green);
+            color: var(--white);
+            border: 3px solid var(--orange-primary);
+        }
+
+        .metric-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--orange-primary);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-card.highlight .metric-label {
+            color: var(--orange-secondary);
+        }
+
+        .metric-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin: 1rem 0;
+        }
+
+        .metric-card.highlight .metric-value {
+            color: var(--white);
+        }
+
+        .callout {
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 6px solid var(--orange-primary);
+            margin: 2rem 0;
+        }
+
+        .callout p {
+            color: var(--white);
+        }
+
+        .callout strong {
+            color: var(--orange-secondary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        th {
+            background: var(--dark-green);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        tr:hover {
+            background: var(--light-gray);
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Slide 1: Title -->
+        <div class="slide title-slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">01/15</div>
+            </div>
+            <h1>The $180M Revenue Extraction Opportunity</h1>
+            <p class="subtitle">RevOps Growth Engineering Proposal</p>
+            <div class="note-box">
+                <p><strong>Note:</strong> $180M represents the mid-point target scenario. Full analysis shows a range of $147-217M based on conservative to aggressive implementation strategies.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Gap -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">02/15</div>
+            </div>
+            <h2>The $180M Gap: What IncaRail Is Leaving On The Table</h2>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">ACTUAL</div>
+                    <div class="metric-value">$30-35M</div>
+                    <p>Current annual revenue</p>
+                </div>
+                <div class="metric-card highlight">
+                    <div class="metric-label">GAP</div>
+                    <div class="metric-value">$180M</div>
+                    <p>Unrealized annually*</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">POTENTIAL</div>
+                    <div class="metric-value">$210-250M</div>
+                    <p>With optimized revenue operations</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <p>*Mid-point scenario. Conservative estimate: $147M | Aggressive estimate: $217M</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Market Reality -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">03/15</div>
+            </div>
+            <h2>Market Reality: A Capacity-Constrained Duopoly</h2>
+
+            <h3>The Situation</h3>
+            <ul>
+                <li><strong>Fixed infrastructure:</strong> 4 trains per day, 650,000 annual capacity</li>
+                <li><strong>Duopoly market:</strong> IncaRail vs PeruRail</li>
+                <li><strong>UNESCO heritage site:</strong> No new construction allowed</li>
+                <li><strong>High fixed costs:</strong> $12-18M annually in rail rights & fees</li>
+            </ul>
+
+            <div class="callout">
+                <p><strong>This is NOT a traditional growth business.</strong></p>
+                <p>You can't "grow TAM" or "expand capacity".</p>
+                <p>The ONLY lever is <strong>revenue extraction per fixed seat</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Current State -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">04/15</div>
+            </div>
+            <h2>Current State: Revenue Leak Across 6 Dimensions</h2>
+
+            <h3>1. Pricing Model</h3>
+            <p><strong>Issue:</strong> Single flat rate vs dynamic pricing</p>
+            <p><strong>Lost revenue:</strong> $72-96M/year</p>
+
+            <h3>2. SEO/Organic</h3>
+            <p><strong>Issue:</strong> Ranks #3,113 in Peru, PeruRail has better organic presence</p>
+            <p><strong>Lost revenue:</strong> $4.7-6.2M/year</p>
+
+            <h3>3. Conversion Rate</h3>
+            <p><strong>Issue:</strong> 2-3% vs industry standard 8-12%</p>
+            <p><strong>Lost revenue:</strong> $24-48M/year</p>
+
+            <h3>4. Upsell/Cross-sell</h3>
+            <p><strong>Issue:</strong> Minimal ancillary revenue capture</p>
+            <p><strong>Lost revenue:</strong> $13-19M/year</p>
+
+            <h3>5. Channel Mix</h3>
+            <p><strong>Issue:</strong> 60% OTA (15-25% commission) vs 40% direct</p>
+            <p><strong>Lost revenue:</strong> $12-18M/year</p>
+
+            <h3>6. Retention</h3>
+            <p><strong>Issue:</strong> No systematic post-trip engagement</p>
+            <p><strong>Lost revenue:</strong> $2-4M/year</p>
+        </div>
+
+        <!-- Slide 5: The Full Experience -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">05/15</div>
+            </div>
+            <h2>The Solution: "The Full Experience" Product Architecture</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Price</th>
+                        <th>Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Essential</strong></td>
+                        <td>$60-80</td>
+                        <td>Basic train service, Standard seating, Current offering</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enhanced</strong></td>
+                        <td>$120-150</td>
+                        <td>Premium seating, Meal service, Priority boarding, WiFi access</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full Experience</strong></td>
+                        <td>$250-400</td>
+                        <td>VIP lounge, Guided tours, Photography, Hotel coordination, Complete curation</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <p><strong>Revenue Impact:</strong> 30-40% of customers upgrading = $72-96M additional annual revenue</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Why Now -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">06/15</div>
+            </div>
+            <h2>Why Now: The Competitive Window Is Closing</h2>
+
+            <h3>TODAY</h3>
+            <p>PeruRail owned by LVMH (Belmond) - Currently focused on luxury hospitality, not digital optimization</p>
+            <div class="note-box" style="background: #FFF3CD; border-color: #FF4400;">
+                <p><strong>NEW EVIDENCE:</strong> PeruRail ALREADY has better SEO position. Window may be SHORTER.</p>
+            </div>
+
+            <h3>12-18 MONTHS</h3>
+            <p>LVMH recognizes digital revenue opportunity - Applies luxury conglomerate resources to digital transformation</p>
+
+            <h3>18-24 MONTHS</h3>
+            <p style="color: #CC0000;"><strong>PeruRail achieves parity in digital optimization - Window closes. Revenue gap permanently lost.</strong></p>
+
+            <div class="callout">
+                <p><strong>The clock is ticking.</strong> PeruRail already has the SEO advantage. If they add conversion optimization, the window closes.</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Problem Definition -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">07/15</div>
+            </div>
+            <h2>What IncaRail THINKS They Need vs Reality</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>What They Asked For (WRONG)</th>
+                        <th>What They Actually Need (RIGHT)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h4>TOFU Marketing Agency</h4>
+                            <ul>
+                                <li>Awareness campaigns</li>
+                                <li>Brand building</li>
+                                <li>Social media presence</li>
+                                <li>Content marketing</li>
+                            </ul>
+                            <p><strong>Cost:</strong> $50-150K/month</p>
+                            <p><strong>ROI:</strong> Unmeasurable</p>
+                        </td>
+                        <td>
+                            <h4>MOFU Revenue Operations</h4>
+                            <ul>
+                                <li>Conversion optimization (2-3% → 8-12%)</li>
+                                <li>Dynamic pricing implementation</li>
+                                <li>Product architecture redesign</li>
+                                <li>SEO/AEO technical optimization</li>
+                                <li>Channel mix rebalancing</li>
+                            </ul>
+                            <p><strong>Investment:</strong> $70.4-108K/year (lean model)</p>
+                            <p><strong>ROI:</strong> 485-1,240x in Year 1</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 8: RevOps Approach -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">08/15</div>
+            </div>
+            <h2>The RevOps Growth Engineering Approach</h2>
+
+            <h3>🎯 North Star Metric</h3>
+            <p><strong>RevPAS</strong> (Revenue Per Available Seat)</p>
+            <p>Current: $48-54 | Target: $323-385</p>
+
+            <h3>🔬 Experimentation Framework</h3>
+            <p>Systematic A/B testing across all revenue levers - 20-30 experiments in first 90 days</p>
+
+            <h3>📊 Data Infrastructure</h3>
+            <p>Full funnel analytics and attribution - Real-time dashboards, weekly optimization</p>
+
+            <h3>⚡ Velocity Optimization</h3>
+            <p>Progressive enhancement, not big bang - Ship experiments daily, compound gains</p>
+
+            <div class="callout">
+                <p><strong>Philosophy:</strong> Small bets, fast feedback, compounding improvements. Optimize for learning velocity, not perfection.</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: 90-Day Roadmap -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">09/15</div>
+            </div>
+            <h2>90-Day Sprint: From Analysis to Revenue Impact</h2>
+
+            <h3>Days 1-30: Foundation</h3>
+            <ul>
+                <li>Full analytics instrumentation</li>
+                <li>Baseline metrics establishment</li>
+                <li>Customer journey mapping</li>
+                <li>Technical SEO audit</li>
+                <li>Pricing model framework</li>
+            </ul>
+            <p><strong>Outcome:</strong> Complete revenue optimization infrastructure</p>
+
+            <h3>Days 31-60: Optimization</h3>
+            <ul>
+                <li>Conversion optimization (10-15 experiments)</li>
+                <li>Pricing tests (3-5 experiments)</li>
+                <li>Product architecture validation</li>
+                <li>SEO quick wins implementation</li>
+                <li>Channel mix rebalancing</li>
+            </ul>
+            <p><strong>Outcome:</strong> 20-40% conversion improvement, pricing validated</p>
+
+            <h3>Days 61-90: Scale</h3>
+            <ul>
+                <li>Full product tier rollout</li>
+                <li>Upsell/cross-sell automation</li>
+                <li>Retention program launch</li>
+                <li>Advanced pricing deployment</li>
+                <li>Team training & handoff</li>
+            </ul>
+            <p><strong>Outcome:</strong> $2-3M additional monthly revenue, sustainable systems</p>
+
+            <div class="callout">
+                <p><strong>90-Day Impact:</strong> $6-12M additional revenue | Foundation for $147-217M annual opportunity</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Consulting Team Structure -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">10/15</div>
+            </div>
+            <h2>90-Day Consulting Sprint Team</h2>
+
+            <h3>Lead RevOps Consultant</h3>
+            <p><em>Strategy, implementation oversight & knowledge transfer</em></p>
+            <ul>
+                <li>90-day sprint leadership and coordination</li>
+                <li>Analytics infrastructure and experimentation framework</li>
+                <li>Train IncaRail's team to sustain improvements</li>
+                <li><strong>Engagement:</strong> 50-60% allocation over 90 days</li>
+            </ul>
+
+            <h3>Conversion & SEO Specialist</h3>
+            <p><em>Technical execution & optimization</em></p>
+            <ul>
+                <li>Conversion rate optimization (CRO) experiments</li>
+                <li>Technical SEO audit and quick wins implementation</li>
+                <li>Landing page and funnel optimization</li>
+                <li><strong>Engagement:</strong> 40-50% allocation over 90 days</li>
+            </ul>
+
+            <h3>Revenue Analyst</h3>
+            <p><em>Data analysis, pricing strategy & measurement</em></p>
+            <ul>
+                <li>RevPAS modeling and performance dashboards</li>
+                <li>Pricing strategy and elasticity testing</li>
+                <li>Success metrics tracking and reporting</li>
+                <li><strong>Engagement:</strong> 30-40% allocation over 90 days</li>
+            </ul>
+
+            <div class="callout">
+                <p><strong>Lean Consulting Model:</strong> Part-time specialists over 90 days</p>
+                <p><strong>Deliverable:</strong> Systems, training, and playbook for IncaRail's team to continue optimization independently</p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Investment -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">11/15</div>
+            </div>
+            <h2>90-Day Sprint Investment: $17.6-27K</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Investment</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>RevOps Execution</strong></td>
+                        <td>$9.6-12K</td>
+                        <td>Existing billable agreement (PEN 12-15K/month × 3 months)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technology & Tools</strong></td>
+                        <td>$3-5K</td>
+                        <td>Analytics, A/B testing platforms, SEO tools</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paid Experiments</strong></td>
+                        <td>$5-10K</td>
+                        <td>Ad testing, UX iterations, campaign optimization</td>
+                    </tr>
+                    <tr style="background: var(--dark-green); color: white;">
+                        <td><strong>TOTAL (90 Days)</strong></td>
+                        <td><strong>$17.6-27K</strong></td>
+                        <td><strong>Lean execution model, phase-gated</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <p style="font-size: 1.3rem; text-align: center;">
+                    <strong>$17.6-27K Investment → $25.6-37.5M Annual Impact → 950-2,130x ROI</strong>
+                </p>
+                <p style="margin-top: 1rem;">Built on existing billable structure with minimal incremental cost. Scale to $70.4-108K/year for full engagement.</p>
+            </div>
+        </div>
+
+        <!-- Slide 12: Risk Mitigation -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">12/15</div>
+            </div>
+            <h2>Risk Mitigation: Built-in Safety Mechanisms</h2>
+
+            <h3>Risk: Team doesn't deliver</h3>
+            <p><strong>Mitigation:</strong></p>
+            <ul>
+                <li>30-day checkpoints with measurable KPIs</li>
+                <li>Progressive payment structure tied to milestones</li>
+                <li>Option to terminate after 90 days if < 15% conversion improvement</li>
+            </ul>
+
+            <h3>Risk: Experiments fail</h3>
+            <p><strong>Mitigation:</strong></p>
+            <ul>
+                <li>Portfolio approach: 20-30 experiments, only 30% need to win</li>
+                <li>Fast failure: Kill losing experiments within 1-2 weeks</li>
+                <li>Learn from failures: Document insights for future iterations</li>
+            </ul>
+
+            <h3>Risk: Customer backlash to pricing</h3>
+            <p><strong>Mitigation:</strong></p>
+            <ul>
+                <li>Grandfather existing customers at current rates</li>
+                <li>Gradual rollout: Test with 10% of traffic first</li>
+                <li>Value justification: Enhanced service for higher tiers</li>
+            </ul>
+
+            <h3>Risk: PeruRail responds faster</h3>
+            <p><strong>Mitigation:</strong></p>
+            <ul>
+                <li>Speed is the advantage: 90-day sprint vs 18-month LVMH process</li>
+                <li>First-mover data: Learn from customer behavior before competition</li>
+                <li>Lock-in mechanisms: Loyalty program, retention optimization</li>
+            </ul>
+        </div>
+
+        <!-- Slide 13: Success Metrics -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">13/15</div>
+            </div>
+            <h2>Success Metrics: How We'll Measure Progress</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Baseline</th>
+                        <th>30 Days</th>
+                        <th>60 Days</th>
+                        <th>90 Days</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: var(--dark-green); color: white;">
+                        <td><strong>RevPAS</strong></td>
+                        <td>$48-54</td>
+                        <td>$60-75</td>
+                        <td>$110-145</td>
+                        <td>$160-200</td>
+                    </tr>
+                    <tr>
+                        <td>Conversion Rate</td>
+                        <td>2-3%</td>
+                        <td>3-4%</td>
+                        <td>5-7%</td>
+                        <td>7-10%</td>
+                    </tr>
+                    <tr>
+                        <td>Avg Transaction Value</td>
+                        <td>$125</td>
+                        <td>$140</td>
+                        <td>$175</td>
+                        <td>$210</td>
+                    </tr>
+                    <tr>
+                        <td>Direct Channel %</td>
+                        <td>40%</td>
+                        <td>45%</td>
+                        <td>52%</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td>Organic Traffic</td>
+                        <td>153K/mo</td>
+                        <td>180K/mo</td>
+                        <td>250K/mo</td>
+                        <td>320K/mo</td>
+                    </tr>
+                    <tr style="background: var(--light-gray);">
+                        <td><strong>Monthly Revenue</strong></td>
+                        <td><strong>$2.5-2.9M</strong></td>
+                        <td><strong>$3.0-3.5M</strong></td>
+                        <td><strong>$4.2-5.0M</strong></td>
+                        <td><strong>$4.8-5.8M</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="note-box">
+                <p><strong>Checkpoint Gates:</strong> If metrics don't improve by ≥15% at 30 days, reassess strategy. If < 10% at 60 days, consider pivot or termination.</p>
+            </div>
+        </div>
+
+        <!-- Slide 14: What We're NOT -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">14/15</div>
+            </div>
+            <h2>What We're NOT Proposing</h2>
+
+            <h3>❌ NOT a Marketing Agency</h3>
+            <p>We're not doing brand awareness, social media campaigns, or content marketing for its own sake.</p>
+            <p><strong>Instead:</strong> Revenue engineering with measurable ROI on every dollar spent.</p>
+
+            <h3>❌ NOT a Website Redesign</h3>
+            <p>We're not rebuilding your site from scratch or doing aesthetic redesigns.</p>
+            <p><strong>Instead:</strong> Systematic A/B testing and progressive enhancement based on data.</p>
+
+            <h3>❌ NOT a Long Consulting Engagement</h3>
+            <p>We're not delivering a 200-page strategy deck and disappearing.</p>
+            <p><strong>Instead:</strong> Hands-on implementation team that ships experiments daily.</p>
+
+            <h3>❌ NOT a Growth Hacking Playbook</h3>
+            <p>We're not applying generic startup tactics to a mature business.</p>
+            <p><strong>Instead:</strong> Capacity-constrained revenue optimization tailored to your market reality.</p>
+
+            <h3>❌ NOT a Speculation</h3>
+            <p>We're not proposing unproven theories or industry best practices.</p>
+            <p><strong>Instead:</strong> Verified SEO data, proven RevOps frameworks, measurable improvements every 30 days.</p>
+        </div>
+
+        <!-- Slide 15: The One Number -->
+        <div class="slide">
+            <div class="slide-header">
+                <div class="logo">IncaRail</div>
+                <div class="slide-number">15/15</div>
+            </div>
+            <h2>The One Number That Matters</h2>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <p style="font-size: 1.5rem; color: var(--dark-gray); margin-bottom: 1rem;">IncaRail is leaving</p>
+                <p style="font-size: 5rem; font-weight: 700; color: var(--orange-primary); font-family: 'Montserrat', sans-serif; margin: 1rem 0;">$180M</p>
+                <p style="font-size: 1.5rem; color: var(--dark-gray); margin-bottom: 2rem;">on the table annually</p>
+            </div>
+
+            <div class="note-box" style="background: #FFF3CD;">
+                <h3 style="color: var(--orange-primary);">NEW EVIDENCE (November 25, 2025):</h3>
+                <ul>
+                    <li><strong>SEO VERIFIED:</strong> IncaRail ranks #3,113 in Peru with 153K monthly visitors</li>
+                    <li><strong>COMPETITIVE REALITY:</strong> PeruRail appears in top search results - IncaRail doesn't</li>
+                    <li><strong>REVENUE LEAK:</strong> Getting traffic but converting at 2-3% vs 8-12% industry standard</li>
+                    <li><strong>SEO ALONE:</strong> $4.7-6.2M additional annual revenue opportunity (verified)</li>
+                    <li><strong>URGENCY:</strong> PeruRail already has SEO advantage, window is closing faster than projected</li>
+                </ul>
+            </div>
+
+            <table style="margin-top: 2rem;">
+                <thead>
+                    <tr>
+                        <th>Continue Current Path</th>
+                        <th>90-Day Revenue Sprint</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>$30-35M annual revenue</p>
+                            <p>Status quo until PeruRail optimizes</p>
+                            <p>Window closes in 12-18 months</p>
+                        </td>
+                        <td style="background: var(--dark-green); color: white;">
+                            <p><strong>$17.6-27K investment (90 days)</strong></p>
+                            <p><strong>$25.6-37.5M annual impact</strong></p>
+                            <p><strong>Foundation for $147-217M opportunity</strong></p>
+                            <p style="color: var(--orange-secondary);"><strong>950-2,130x ROI</strong></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout" style="margin-top: 2rem; text-align: center;">
+                <h3 style="color: var(--orange-secondary); margin-bottom: 1rem;">The clock is ticking. PeruRail already has the SEO advantage.</h3>
+                <p style="font-size: 1.5rem; font-weight: 700;">Let's start the 90-day sprint.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Print handler
+        window.onbeforeprint = function() {
+            document.body.style.background = 'white';
+        };
+    </script>
+</body>
+</html>
